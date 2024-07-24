@@ -1,11 +1,5 @@
 ﻿using LeaningCentre.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace LeaningCentre.Services
 {
@@ -42,13 +36,13 @@ namespace LeaningCentre.Services
         public void AddAplication(string title)
         {
             int id = Applications.Count > 0 ? Applications.Max(s => s.Id) + 1 : 1;
-            Applications.Add(new Application1 { Id = id, Title = title});
+            Applications.Add(new Application1 { Id = id, Title = title });
             SaveApplicationToJson();
         }
 
         public void GetListApplications()
         {
-            if (Applications.Count>0)
+            if (Applications.Count > 0)
             {
                 foreach (var app in Applications)
                 {

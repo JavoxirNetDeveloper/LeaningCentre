@@ -6,14 +6,13 @@ namespace LeaningCentre.Services
     {
         public static void AdminPage()
         {
-
             LearningCentre1 learningCentre1 = GetInstance;
-
             bool exit1 = false;
 
             while (!exit1)
             {
                 Console.Clear();
+                Console.WriteLine("\t\t\t\t\t\t\t\t\t\t\t\t\t\tADMIN");
                 Console.WriteLine("1.Courses");  //crud
                 Console.WriteLine("2.Mentors"); //crud
                 Console.WriteLine("3.About us"); //c
@@ -33,7 +32,7 @@ namespace LeaningCentre.Services
                         while (!exit2)
                         {
                             Console.Clear();
-
+                            Console.WriteLine("\t\t\t\t\t\t\t\t\t\t\t\t\t\tADMIN");
                             Console.WriteLine("1.Add new course");
                             Console.WriteLine("2.Update course");
                             Console.WriteLine("3.Delette course");
@@ -49,7 +48,6 @@ namespace LeaningCentre.Services
                                     Console.Write("Enter Course name: ");
                                     string Cname = Console.ReadLine();
                                     learningCentre1.AddCourse(Cname);
-                                    Console.WriteLine("Successfully added");
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
@@ -93,6 +91,7 @@ namespace LeaningCentre.Services
                         while (!exit3)
                         {
                             Console.Clear();
+                            Console.WriteLine("\t\t\t\t\t\t\t\t\t\t\t\t\t\tADMIN");
                             Console.WriteLine("1.Add new mentor");
                             Console.WriteLine("2.Update mentor");
                             Console.WriteLine("3.Delete mentor");
@@ -108,7 +107,6 @@ namespace LeaningCentre.Services
                                     Console.Write("Enter Mentor name: ");
                                     string Mname = Console.ReadLine();
                                     learningCentre1.AddMentor(Mname);
-                                    Console.WriteLine("Successfully added");
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;

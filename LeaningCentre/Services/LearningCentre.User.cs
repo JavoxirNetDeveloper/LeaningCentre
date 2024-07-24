@@ -12,6 +12,7 @@ namespace LeaningCentre.Services
             {
                 LearningCentre1 learningCentre1 = GetInstance;
                 Console.Clear();
+                Console.WriteLine("\t\t\t\t\t\t\t\t\t\t\t\t\t\tUSER");
                 Console.WriteLine("1.Courses");  //r
                 Console.WriteLine("2.Mentors"); //r
                 Console.WriteLine("3.About us"); //r
@@ -44,6 +45,7 @@ namespace LeaningCentre.Services
                         while (!exit4)
                         {
                             Console.Clear();
+                            Console.WriteLine("\t\t\t\t\t\t\t\t\t\t\t\t\t\tUSER");
                             Console.WriteLine("1.Create application");
                             Console.WriteLine("2.Application list");
                             Console.WriteLine("3.Back");

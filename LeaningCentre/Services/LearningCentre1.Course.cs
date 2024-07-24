@@ -45,6 +45,7 @@ namespace LeaningCentre.Services
             {
                 int id = Courses.Count > 0 ? Courses.Max(s => s.Id) + 1 : 1;
                 Courses.Add(new Course { Id = id, Name = name });
+                Console.WriteLine("Successfully added");
                 SaveCourseToJson();
             }
             else
@@ -74,6 +75,7 @@ namespace LeaningCentre.Services
             if (course != null)
             {
                 Courses.Remove(course);
+                Console.WriteLine("Deleted succesfully");
             }
             else
                 Console.WriteLine("Course not found");
