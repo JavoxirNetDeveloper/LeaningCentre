@@ -50,7 +50,7 @@ namespace LeaningCentre.Services
 
         public static void AboutUs()
         {
-            Console.WriteLine("We are the best Learning cemtre");
+            Console.WriteLine("We are the best Learning centre");
         }
     }
 }

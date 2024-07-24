@@ -35,10 +35,36 @@ namespace LeaningCentre.Services
                         break;
                     case "3":
                         AboutUs();
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case "4":
-                        Console.Write("Enter your name: ");
-                        string name = Console.ReadLine();
+                        bool exit4 = false;
+                        while (!exit4)
+                        {
+                            Console.WriteLine("1.Create application");
+                            Console.WriteLine("2.Application list");
+                            Console.WriteLine("3.Back");
+
+                            Console.Write("Enter option: ");
+                            string option1 = Console.ReadLine();
+
+                            switch(option1)
+                            {
+                                case "1":
+                                    Console.Write("Enter your name: ");
+                                    string name = Console.ReadLine();
+                                   // learningCentre1.AddAplication(name,)
+                                    break;
+                                case "2":
+                                    break;
+                                case "3":
+                                    exit4 = true;
+                                    UserPage();
+                                    break;
+                            }
+                        }
+                       
                        // learningCentre1.AddAplication(name,);
                         break;
                     case "5":

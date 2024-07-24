@@ -51,7 +51,7 @@ namespace LeaningCentre.Services
             {
                 foreach (var app in Applications)
                 {
-                    Console.WriteLine(app.Id + " " + app.UserName + " " + app.Course );
+                    Console.WriteLine(app.Id + " " + app.UserName + " " + app.Course.Name);
                 }
             }
             else
