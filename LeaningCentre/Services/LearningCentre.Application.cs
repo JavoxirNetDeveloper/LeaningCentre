@@ -12,7 +12,7 @@ namespace LeaningCentre.Services
     public partial class LearningCentre1
     {
         string ApplicationPath = GetApplicationPath();
-        List<Application1> Applications;
+        List<Application1> Applications = new List<Application1>();
         public void LoadApplicationFromJson()
         {
             if (File.Exists(ApplicationPath))
@@ -39,10 +39,11 @@ namespace LeaningCentre.Services
         }
 
 
-        public void AddAplication(string name, Course course)
+        public void AddAplication(string title)
         {
             int id = Applications.Count > 0 ? Applications.Max(s => s.Id) + 1 : 1;
-            Applications.Add(new Application1 { Id = id, Course = course, UserName = name });
+            Applications.Add(new Application1 { Id = id, Title = title});
+            SaveApplicationToJson();
         }
 
         public void GetListApplications()
@@ -51,7 +52,7 @@ namespace LeaningCentre.Services
             {
                 foreach (var app in Applications)
                 {
-                    Console.WriteLine(app.Id + " " + app.UserName + " " + app.Course.Name);
+                    Console.WriteLine(app.Id + " " + app.Title);
                 }
             }
             else

@@ -43,7 +43,7 @@ namespace LeaningCentre.Services
             {
                 int id = Mentors.Count > 0 ? Courses.Max(s => s.Id) + 1 : 1;
                 Mentors.Add(new Mentor { Id = id, Name = name });
-                SaveCourseToJson();
+                SaveMentorToJson();
             }
             else
             {
@@ -58,7 +58,7 @@ namespace LeaningCentre.Services
             {
                 mentor.Name = name;
                 Console.WriteLine("Successfully updated");
-                SaveCourseToJson();
+                SaveMentorToJson();
             }
             else
             {
@@ -75,7 +75,7 @@ namespace LeaningCentre.Services
             }
             else
                 Console.WriteLine("Mentor not found");
-            SaveCourseToJson();
+            SaveMentorToJson();
         }
 
         public  void GetListMentor()

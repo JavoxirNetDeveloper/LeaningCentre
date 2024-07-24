@@ -11,6 +11,7 @@ namespace LeaningCentre.Services
         {
             LoadCourseFromJson();
             LoadMentorFromJson();
+            LoadApplicationFromJson();
         }
         
         public static LearningCentre1 GetInstance

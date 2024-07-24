@@ -9,25 +9,22 @@ namespace LeaningCentre.Services
 
             LearningCentre1 learningCentre1 = GetInstance;
 
-
-            Console.Clear();
-            Console.WriteLine("1.Courses");  //crud
-            Console.WriteLine("2.Mentors"); //crud
-            Console.WriteLine("3.About us"); //c
-            Console.WriteLine("4.Applications");  // r
-            Console.WriteLine("5.Back");  // r
-
-
             bool exit1 = false;
 
             while (!exit1)
             {
+                Console.Clear();
+                Console.WriteLine("1.Courses");  //crud
+                Console.WriteLine("2.Mentors"); //crud
+                Console.WriteLine("3.About us"); //c
+                Console.WriteLine("4.Applications");  // r
+                Console.WriteLine("5.Back");  // r
+
                 Console.Write("\nEnter an option: ");
                 string choise = Console.ReadLine();
 
                 switch (choise)
                 {
-
                     //course
                     case "1":    /// course
 
@@ -36,6 +33,7 @@ namespace LeaningCentre.Services
                         while (!exit2)
                         {
                             Console.Clear();
+
                             Console.WriteLine("1.Add new course");
                             Console.WriteLine("2.Update course");
                             Console.WriteLine("3.Delette course");
@@ -155,7 +153,8 @@ namespace LeaningCentre.Services
                         Console.Clear();
                         break;
                     case "4":
-
+                        learningCentre1.GetListApplications();
+                        Console.ReadKey();
                         break;
                     case "5":
                         exit1 = true;
