@@ -42,7 +42,20 @@ namespace LeaningCentre.Services
         public void AddAplication(string name, Course course)
         {
             int id = Applications.Count > 0 ? Applications.Max(s => s.Id) + 1 : 1;
-           // if (!IsNullOrEmpty(name))
+            Applications.Add(new Application1 { Id = id, Course = course, UserName = name });
+        }
+
+        public void GetListApplications()
+        {
+            if (Applications.Count>0)
+            {
+                foreach (var app in Applications)
+                {
+                    Console.WriteLine(app.Id + " " + app.UserName + " " + app.Course );
+                }
+            }
+            else
+                Console.WriteLine("Applications list is empty");
         }
 
         public static string GetApplicationPath()
