@@ -6,7 +6,6 @@ namespace LeaningCentre
     {
         static void Main()
         {
-            
             LearningCentre1.Start();
         }
     }
