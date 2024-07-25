@@ -31,6 +31,7 @@ namespace LeaningCentre.Services
             }
             return Courses;
         }
+
         public  void SaveCourseToJson()
         {
             string serialized = JsonSerializer.Serialize(Courses);
