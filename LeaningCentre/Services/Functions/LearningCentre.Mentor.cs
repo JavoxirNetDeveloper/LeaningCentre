@@ -41,7 +41,7 @@ namespace LeaningCentre.Services
         {
             if (!string.IsNullOrEmpty(name))
             {
-                int id = Mentors.Count > 0 ? Courses.Max(s => s.Id) + 1 : 1;
+                int id = Mentors.Count > 0 ? Mentors.Max(s => s.Id) + 1 : 1;
                 Mentors.Add(new Mentor { Id = id, Name = name });
                 Console.WriteLine("Successfully added");
                 SaveMentorToJson();
