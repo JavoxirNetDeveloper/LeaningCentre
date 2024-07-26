@@ -11,6 +11,7 @@ namespace LeaningCentre.Services
             LoadCourseFromJson();
             LoadMentorFromJson();
             LoadApplicationFromJson();
+            LoadTextfromJson();
         }
 
         public static LearningCentre1 GetInstance
@@ -84,9 +85,6 @@ namespace LeaningCentre.Services
             }
         }
 
-        public static void AboutUs()
-        {
-            Console.WriteLine("We are the best Learning centre");
-        }
+       
     }
 }

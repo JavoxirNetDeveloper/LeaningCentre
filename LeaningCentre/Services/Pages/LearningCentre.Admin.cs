@@ -4,10 +4,7 @@
     {
         public static void AdminPage()
         {
-            LearningCentre1 learningCentre1 = GetInstance;
-            bool exit1 = false;
-
-            List<string> buyruq2 = new List<string>()
+            List<string> Command2 = new List<string>()
             {
                 "Courses",
                 "Mentors",
@@ -16,60 +13,69 @@
                 "Back"
             };
 
-            while (!exit1)
+                           
+            List<string> CoursesCommand = new List<string>()
             {
-                //Console.Clear();
-                //Console.WriteLine("\t\t\t\t\t\tADMIN");
-                //Console.WriteLine("1.Courses");  //crud
-                //Console.WriteLine("2.Mentors"); //crud
-                //Console.WriteLine("3.About us"); //c
-                //Console.WriteLine("4.Applications");  // r
-                //Console.WriteLine("5.Back");  // r
+                "1.Add new course",
+                "2.Update course",
+                "3.Delete course",
+                "4.Course List",
+                "5.Back"
+            };
 
-                //Console.Write("\nEnter an option: ");
-                //string choise = Console.ReadLine();
-                int index = ArrowIndex(buyruq2, "Admin");
+            List<string> MentorsCommand = new List<string>()
+            {
+                "1.Add new mentor",
+                "2.Update mentor",
+                "3.Delete mentor",
+                "4.Mentor list",
+                "5.Back"
+            };
 
-                switch (index)
+            List <string> AboutUsCommand = new List<string>() 
+            {
+                "About Us text",
+                "Add info to About Us text",
+                "Update About Us text",
+                "Delete About Us text",
+                "Back"
+            };
+
+
+            const string   password = "1234";
+            Console.Write("Enter password: ");
+            string ? password1 = Console.ReadLine();
+
+            if (password==password1) 
+            {
+                LearningCentre1 learningCentre1 = GetInstance;
+                bool exit1 = false;
+
+                AdminPage:
+                while (!exit1)
                 {
-                    //course
-                    case 0:    /// course
+                    int index = ArrowIndex(Command2, "Admin");
 
-                        bool exit2 = false;
-                        List<string> CoursesCommand = new List<string>()
-                        {
-                            "1.Add new course",
-                            "2.Update course",
-                            "3.Delete course",
-                            "4.Course List",
-                            "5.Back"
-                        };
-
-                        while (!exit2)
-                        {
-                            //Console.Clear();
-                            //Console.WriteLine("\t\t\t\t\t\t\tADMIN");
-                            //Console.WriteLine("1.Add new course");
-                            //Console.WriteLine("2.Update course");
-                            //Console.WriteLine("3.Delette course");
-                            //Console.WriteLine("4.Course List");
-                            //Console.WriteLine("5.Back");
-
-                            //Console.Write("\nEnter option: ");
-                            //string optionCourse = (Console.ReadLine());
-
-                             int index1 = ArrowIndex(CoursesCommand, "Admin");
-
-                            switch (index1)
+                    switch (index)
+                    {
+                        //course
+                        case 0:    
+                            while (true)
                             {
-                                case 0:
+                                int index1 = ArrowIndex(CoursesCommand, "Admin");
+                                switch (index1)
+                                {
+                                    case 0:
+                                    Console.Clear();
                                     Console.Write("Enter Course name: ");
                                     string Cname = Console.ReadLine();
                                     learningCentre1.AddCourse(Cname);
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
-                                case 1:
+
+                                    case 1:
+                                    Console.Clear();
                                     learningCentre1.GetListCourse();
                                     Console.Write("Enter course id: ");
                                     int UcourseId = int.Parse(Console.ReadLine());
@@ -80,6 +86,7 @@
                                     Console.Clear();
                                     break;
                                 case 2:
+                                    Console.Clear();
                                     learningCentre1.GetListCourse();
                                     Console.Write("Enter course id: ");
                                     int DcourseId = int.Parse(Console.ReadLine());
@@ -88,59 +95,36 @@
                                     Console.Clear();
                                     break;
                                 case 3:
+                                    Console.Clear();
                                     learningCentre1.GetListCourse();
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
                                 case 4:
-                                    exit2 = true;
-                                    AdminPage();
-                                    break;
-                                default:
-                                    Console.WriteLine("Invalid option , try again");
-                                    break;
+                                    goto AdminPage;
+                                }
                             }
-                        }
-                        break;
 
-                    //mentor
-                    case 1:
+                        //mentor
+                        case 1:
 
-                        bool exit3 = false;
-                        List<string> MentorsCommand = new List<string>()
-                        {
-                            "1.Add new mentor",
-                            "2.Update mentor",
-                            "3.Delete mentor",
-                            "4.Mentor list",
-                            "5.Back"
-                        };
-
-                        while (!exit3)
-                        {
-                            //Console.Clear();
-                            //Console.WriteLine("\t\t\t\t\t\t\t\t\t\t\t\t\t\tADMIN");
-                            //Console.WriteLine("1.Add new mentor");
-                            //Console.WriteLine("2.Update mentor");
-                            //Console.WriteLine("3.Delete mentor");
-                            //Console.WriteLine("4.Mentor List");
-                            //Console.WriteLine("5.Back");
-
-                            //Console.Write("\nEnter option: ");
-                            //string optionMentor = (Console.ReadLine());
-
-                        int indexMentor = ArrowIndex(MentorsCommand, "Admin");
-
-                            switch (indexMentor)
+                            while (true)
                             {
-                                case 0:
+                                int indexMentor = ArrowIndex(MentorsCommand, "Admin");
+
+                                switch (indexMentor)
+                                {
+                                    case 0:
+                                    Console.Clear();
                                     Console.Write("Enter Mentor name: ");
                                     string Mname = Console.ReadLine();
                                     learningCentre1.AddMentor(Mname);
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
-                                case 1:
+
+                                    case 1:
+                                    Console.Clear();
                                     learningCentre1.GetListMentor();
                                     Console.Write("Enter Mentor id: ");
                                     int UMentorId = int.Parse(Console.ReadLine());
@@ -150,7 +134,9 @@
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
-                                case 2:
+
+                                    case 2:
+                                    Console.Clear();
                                     learningCentre1.GetListMentor();
                                     Console.Write("Enter Mentor id: ");
                                     int DMentorId = int.Parse(Console.ReadLine());
@@ -158,28 +144,57 @@
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
-                                case 3:
+
+                                    case 3:
                                     learningCentre1.GetListMentor();
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
-                                case 4:
-                                    exit3 = true;
-                                    AdminPage();
-                                    break;
-                                default:
-                                    Console.WriteLine("Invalid option , try again");
-                                    break;
+
+                                    case 4:
+                                    goto AdminPage;
+                                }
                             }
-                        }
-                        break;
 
                     /// about us
                     case 2:
-                        AboutUs();
-                        Console.ReadKey();
-                        Console.Clear();
-                        break;
+                        while (true) 
+                        {
+                            int indexAboutUs = ArrowIndex(AboutUsCommand, "Admin");
+
+                            switch (indexAboutUs) 
+                            {
+                                case 0:
+                                Console.Clear();
+                                learningCentre1.AboutUs();
+                                Console.ReadKey();
+                                break;
+
+                                case 1:
+                                System.Console.Write("Enter text you want to add: ");
+                                string text = Console.ReadLine();
+                                learningCentre1.AddInfoAboutCentre(text);
+                                Console.ReadKey();
+                                break;
+
+                                case 2:
+                                System.Console.WriteLine("Enter text you want to update");
+                                string textUpdate = Console.ReadLine();
+                                learningCentre1.UpdateInfoAboutCenttre(textUpdate);
+                                Console.ReadKey();
+                                break;
+
+                                case 3:
+                                learningCentre1.DeleteInfoAboutCenttre();
+                                Console.ReadKey();
+                                break;
+
+                                case 4:
+                                goto AdminPage;
+                            }
+                        }
+
+                       
                     case 3:
                         learningCentre1.GetListApplications();
                         Console.ReadKey();
@@ -188,7 +203,14 @@
                         exit1 = true;
                         Start();
                         break;
+                    }
                 }
+            }
+            else
+            {
+                System.Console.WriteLine("Incorrect password");
+                Console.ReadKey();
+                Start();
             }
         }
     }

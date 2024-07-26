@@ -5,10 +5,7 @@ namespace LeaningCentre.Services
 {
     public sealed partial class LearningCentre1
     {
-        //public LearningCentre1()
-        //{
-            
-        //}
+       
         string MentorsPath = GetMentorPath();
         public List<Mentor> Mentors;
 

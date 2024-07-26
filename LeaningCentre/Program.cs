@@ -6,7 +6,14 @@ namespace LeaningCentre
     {
         static void Main()
         {
-            LearningCentre1.Start();
+            try 
+            {
+                LearningCentre1.Start();
+            }
+            catch (Exception ex) 
+            {
+                System.Console.WriteLine(ex.Message);
+            }
         }
     }
 }
